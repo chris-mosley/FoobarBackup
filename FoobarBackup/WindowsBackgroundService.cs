@@ -9,7 +9,7 @@ public sealed class WindowsBackgroundService : BackgroundService
 {
     private readonly Backup _backupService;
     private readonly ILogger<WindowsBackgroundService> _logger;
-    int sleep = Backup.GetConfig().GetValue<int>("interval");
+    int sleep = Common.GetConfig().GetValue<int>("interval");
     public WindowsBackgroundService(
         Backup backup,
         ILogger<WindowsBackgroundService> logger) =>

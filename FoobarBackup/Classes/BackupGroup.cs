@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoobarBackup.Classes
 {
-    internal class BackupGroup
+    public class BackupGroup
     {
         public string? Name { get; set; }
         public bool? Enabled { get; set; }
@@ -17,5 +17,6 @@ namespace FoobarBackup.Classes
         public List<string>? ExcludeFolders { get; set; }
         public List<string>? ExcludeFiles { get; set; }
         public required string Destination { get; set; }
+        public ScavengeSettings? Scavenge { get; set; }
     }
 }

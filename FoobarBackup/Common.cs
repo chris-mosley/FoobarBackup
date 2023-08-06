@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FoobarBackup
 {
-    internal class Common
+    public class Common
     {
         public bool CheckService()
         {
@@ -28,6 +28,19 @@ namespace FoobarBackup
             {
                 Console.WriteLine(e.Message);
                 return false;
+            }
+        }
+        public static IConfiguration GetConfig()
+        {
+            try
+            {
+                IConfigurationRoot config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+                return config;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
             }
         }
     }
